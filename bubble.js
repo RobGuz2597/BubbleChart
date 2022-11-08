@@ -26,21 +26,21 @@ const generateChart = data => {
     
     const circle = node.append('circle')
         .style('fill', d => colors[d.data.category])
-        .on('mouseover', function (e, d) {
-            tooltip.select('img').attr('src', d.data.img);
-            tooltip.select('a').attr('href', d.data.link).text(d.data.name);
-            tooltip.select('span').attr('class', d.data.category).text(d.data.category);
-            tooltip.style('visibility', 'visible');
+        // .on('mouseover', function (e, d) {
+        //     tooltip.select('img').attr('src', d.data.img);
+        //     tooltip.select('a').attr('href', d.data.link).text(d.data.name);
+        //     tooltip.select('span').attr('class', d.data.category).text(d.data.category);
+        //     tooltip.style('visibility', 'visible');
 
-            d3.select(this).style('stroke', '#222');
-        })
-        .on('mousemove', e => tooltip.style('top', `${e.pageY}px`)
-                                     .style('left', `${e.pageX + 10}px`))
-        .on('mouseout', function () {
-            d3.select(this).style('stroke', 'none');
-            return tooltip.style('visibility', 'hidden');
-        })
-        .on('click', (e, d) => window.open(d.data.link));
+        //     d3.select(this).style('stroke', '#222');
+        // })
+        // .on('mousemove', e => tooltip.style('top', `${e.pageY}px`)
+        //                              .style('left', `${e.pageX + 10}px`))
+        // .on('mouseout', function () {
+        //     d3.select(this).style('stroke', 'none');
+        //     return tooltip.style('visibility', 'hidden');
+        // })
+        // .on('click', (e, d) => window.open(d.data.link));
     
     const label = node.append('text')
         .attr('dy', 2)
